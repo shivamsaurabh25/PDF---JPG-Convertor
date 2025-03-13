@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #252547);
+  color: white;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+h1{
+  font-size: 40px;
+}
+
+.container {
+  margin-top: 80px;
+  padding: 40px;
+  text-align: center;
+}
+
+.converter {
+  margin: 100px auto;
+  padding: 40px;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.converter h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 15px auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.image-preview {
+  margin-top: 20px;
+}
+
+.image-preview img {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #00aaff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #0088cc;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 5px 0;
+  }
+
+  .converter {
+    max-width: 90%;
+  }
+}
