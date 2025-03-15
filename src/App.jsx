@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PdfToJpg from "./components/PdfToJpg";
 import JpgToPdf from "./components/JpgToPdf";
 import Home from "./components/Home";
@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="container">
+      <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pdf-to-jpg" element={<PdfToJpg />} />

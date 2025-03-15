@@ -12,7 +12,7 @@ const JpgToPdf = () => {
   const convertToPdf = () => {
     if (!selectedFiles.length) return;
     const pdf = new jsPDF();
-    
+
     selectedFiles.forEach((file, index) => {
       const img = new Image();
       img.src = URL.createObjectURL(file);

@@ -27,13 +27,16 @@ const PdfToJpg = () => {
           let images = [];
           for (let i = 1; i <= pdf.numPages; i++) {
             const page = await pdf.getPage(i);
+            const viewport = page.getViewport({ scale: 3 });
             const canvas = document.createElement("canvas");
             const context = canvas.getContext("2d");
-            canvas.width = page.view[2];
-            canvas.height = page.view[3];
 
-            await page.render({ canvasContext: context, viewport: page.getViewport({ scale: 2 }) }).promise;
-            images.push(canvas.toDataURL("image/jpeg"));
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            await page.render({ canvasContext: context, viewport }).promise;
+            const imageData = canvas.toDataURL("image/jpeg");
+            images.push(imageData);
           }
 
           allImages[file.name] = images;
@@ -57,7 +60,7 @@ const PdfToJpg = () => {
             <h4>{file}</h4>
             {imageUrls[file].map((img, index) => (
               <div key={index}>
-                <img src={img} alt={`Page ${index + 1}`} width="300" />
+                <img src={img} alt={`Page ${index + 1}`} width="100%" />
                 <a href={img} download={`${file}-page-${index + 1}.jpg`} className="download-btn">Download</a>
               </div>
             ))}
